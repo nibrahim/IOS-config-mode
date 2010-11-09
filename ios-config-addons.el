@@ -1,5 +1,5 @@
 ;;; ios-config-addons.el
-;; Copyright (C) 2004 Noufal Ibrahim <nkv at hcoop period net>
+;; Copyright (C) 2004 Noufal Ibrahim <nkv at nibrahim.net.in>
 ;;
 ;; This program is not part of Gnu Emacs
 ;;
