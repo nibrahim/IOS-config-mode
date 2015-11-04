@@ -1,4 +1,4 @@
-;;; ios-config-mode.el --- ???
+;;; ios-config-mode.el --- edit Cisco IOS configuration files
 
 ;; Copyright (C) 2004 Noufal Ibrahim <nkv at nibrahim.net.in>
 ;;
