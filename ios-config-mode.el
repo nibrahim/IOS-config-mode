@@ -38,25 +38,19 @@
 
 (defface ios-config-ipadd-face
   '(
-    (((type tty) (class color)) (:foreground "yellow"))
-    (((type graphic) (class color)) (:foreground "LightGoldenrod"))
-    (t (:foreground "LightGoldenrod" ))
+    (t (:inherit font-lock-type-face))
     )
   "Face for IP addresses")
 
 (defface ios-config-command-face 
   '(
-    (((type tty) (class color)) (:foreground "cyan"))
-    (((type graphic) (class color)) (:foreground "cyan"))
-    (t (:foreground "cyan" ))
+    (t (:inherit font-lock-builtin-face))
     )
   "Face for basic router commands")
 
 (defface ios-config-toplevel-face
   '(
-    (((type tty) (class color)) (:foreground "blue"))
-    (((type graphic) (class color)) (:foreground "lightsteelblue"))
-    (t (:foreground "lightsteelblue" ))
+    (t (:inherit font-lock-keyword-face))
     )
   "Face for basic router commands")
 
