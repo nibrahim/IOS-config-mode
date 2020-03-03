@@ -66,17 +66,35 @@
     )
   "Face for \"no\"")
 
-
-;; (regexp-opt '("interface" "ip vrf" "controller" "class-map" "redundancy" "line" "policy-map" "router" "access-list" "route-map") t)
-;; (regexp-opt '("diagnostic" "hostname" "logging" "service" "alias" "snmp-server" "boot" "card" "vtp" "version" "enable") t)
-
 (defconst ios-config-font-lock-keywords
-  (list
-   '( "\\<\\(access-list\\|c\\(?:lass-map\\|ontroller\\)\\|i\\(?:nterface\\|p vrf\\)\\|line\\|policy-map\\|r\\(?:edundancy\\|oute\\(?:-map\\|r\\)\\)\\)\\>". ios-config-toplevel-face)
-   '( "\\<\\(alias\\|boot\\|card\\|diagnostic\\|^enable\\|hostname\\|logging\\|s\\(?:ervice\\|nmp-server\\)\\|v\\(?:ersion\\|tp\\)\\)\\>" . ios-config-command-face)
-   '("\\<\\(no\\)\\>" . ios-config-no-face)
-   '("\\<\\([0-9]\\{1,3\\}\\.[0-9]\\{1,3\\}\\.[0-9]\\{1,3\\}\\.[0-9]\\{1,3\\}\\)\\>" . ios-config-ipadd-face)
-   )
+  `((,(concat "\\_<"
+       (regexp-opt '("access-list" "class-map" "controller" "interface" "vrf"
+                     "line" "policy-map" "redundancy-map" "route-map"
+                     "object-group" "access-group" "cluster" "username"
+                     "service-policy") t)
+       "\\_>")
+     . ios-config-toplevel-face)
+    (,(concat "\\_<"
+       (regexp-opt '("alias" "boot" "card" "diagnostic" "enable" "hostname"
+                     "logging" "service" "snmp-server" "version" "vtp" "names"
+                     "description" "lacp" "port-channel" "mac-address" "vlan"
+                     "nameif" "security-level" "ip" "ospf" "ftp"
+                     "network-object" "service-object" "icmp-object"
+                     "protocol-object" "group-object" "host" "network" "mtu"
+                     "icmp" "asdm" "prefix-list" "timeout" "user-identity" "aaa"
+                     "http" "crypto" "telnet" "ssh" "console" "threat-detection"
+                     "ssl" "service-type" "match" "class" "parameters" "inspect"
+                     "prompt" "jumbo-frame" "shutdown" "address"
+                     "management-only" "destination" "extended" "permit" "any"
+                     "type" "for" "priority" "health-check" "failover"
+                     "monitor-interface" "arp" "area" "server" "scopy"
+                     "message-length" "call-home" "password" "encrypted"
+                     "privilege") t)
+       "\\_>")
+     . ios-config-command-face)
+    ("\\<\\(no\\)\\>" . ios-config-no-face)
+    ("\\<\\([0-9]\\{1,3\\}\\.[0-9]\\{1,3\\}\\.[0-9]\\{1,3\\}\\.[0-9]\\{1,3\\}\\)\\>" . ios-config-ipadd-face))
+
   "Font locking definitions for cisco router mode")
 
 ;; Imenu definitions. 
